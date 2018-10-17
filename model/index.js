@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const item = new Schema({
   itemId: {
-    type: number
+    type: Number
   },
   title: {
     type: String,
@@ -14,11 +14,11 @@ const item = new Schema({
     default: ''
   },
   value: {
-    type: boolean,
+    type: Boolean,
     default: false
   },
   isStarred: {
-    type: boolean,
+    type: Boolean,
     default: false
   }
 })
@@ -35,17 +35,6 @@ const userSchema = new Schema ({
   createdAt: {
     type: Date,
     default: Date.now()
-  },
-  state: {
-    itemCount: {
-      type: Number,
-      default: 0
-    },
-    showingListIndex: {
-      type: Number,
-      default: 0
-    },
-
   }
 })
 

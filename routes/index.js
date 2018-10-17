@@ -8,18 +8,24 @@ const Schema = mongoose.Schema;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.redirect('/#/list');
 });
 
+/*
 router.post('/api/login', function(req, res, next) {
-  User.findOne({username: req.body.username}, function(err, data) {
+  User.findOne({
+    username: req.body.username,
+    password: req.body.password
+  }, function(err, data) {
     if (data) {
-      console.log(data);
-      res.send("found");
+      res.redirect('/#/list');
     } else {
-      res.send("failed");
+      res.json({
+        status: false,
+        info: "用户名或密码不正确！"
+      });
     }    
   })
-});
+});*/
 
 module.exports = router;
